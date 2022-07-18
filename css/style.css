@@ -1,0 +1,111 @@
+html {
+  font-size: 62.5%;
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background-color: hsl(27deg, 66%, 92%);
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 720px) {
+  body {
+    height: 100%;
+  }
+  main {
+    margin: 5em auto;
+  }
+}
+main {
+  width: min(90%, 50em);
+}
+main h1 {
+  font-size: 4rem;
+}
+main h2 {
+  font-size: 3rem;
+}
+main h3 {
+  font-size: 2.6rem;
+}
+main h4 {
+  font-size: 1.6rem;
+}
+main .balance-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  background-color: hsl(10deg, 79%, 65%);
+  border-radius: 15px;
+  padding: 2.5em 3.5em;
+  margin-bottom: 3em;
+}
+main .balance-container h4,
+main .balance-container h3 {
+  color: hsl(33deg, 100%, 98%);
+}
+main .balance-container h4 {
+  font-weight: 400;
+}
+main .chart {
+  background-color: hsl(33deg, 100%, 98%);
+  border-radius: 15px;
+  padding: 2.5em 3.5em;
+}
+main .chart h1,
+main .chart h2 {
+  color: hsl(25deg, 47%, 15%);
+}
+main .chart h4 {
+  color: hsl(28deg, 10%, 53%);
+  font-weight: 400;
+}
+main .chart canvas {
+  margin: 4em 0 2em 0;
+}
+main .chart .total-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 2px solid #efedeb;
+  padding-top: 2em;
+}
+main .chart .total-container .last-month {
+  text-align: end;
+  width: 40%;
+}
+main .chart .total-container .last-month h4:first-of-type {
+  color: hsl(25deg, 47%, 15%);
+  font-weight: 700;
+}
+
+.th-style {
+  border-width: 0;
+  font-family: inherit;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.tooltip-style {
+  background: hsl(25deg, 47%, 15%);
+  border-radius: 6px;
+  color: hsl(33deg, 100%, 98%);
+  opacity: 1;
+  pointer-events: none;
+  position: absolute;
+  transform: translate(-50%, -125%);
+  transition: all 0.1s ease;
+}/*# sourceMappingURL=style.css.map */

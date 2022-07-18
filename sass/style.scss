@@ -1,0 +1,138 @@
+$soft-red: hsl(10, 79%, 65%);
+$cyan: hsl(186, 34%, 60%);
+$dark-brown: hsl(25, 47%, 15%);
+$medium-brown: hsl(28, 10%, 53%);
+$cream: hsl(27, 66%, 92%);
+$very-pale-orange: hsl(33, 100%, 98%);
+
+$regular: 400;
+$bold: 700;
+
+html {
+  font-size: 62.5%;
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background-color: $cream;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+//actual mobile style
+@media only screen and (max-width: 720px) {
+  body {
+    height: 100%;
+  }
+  main {
+    margin: 5em auto;
+  }
+}
+
+main {
+  width: Min(90%, 50em);
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  h3 {
+    font-size: 2.6rem;
+  }
+
+  h4 {
+    font-size: 1.6rem;
+  }
+
+  .balance-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    background-color: $soft-red;
+    border-radius: 15px;
+    padding: 2.5em 3.5em;
+    margin-bottom: 3em;
+
+    h4,
+    h3 {
+      color: $very-pale-orange;
+    }
+
+    h4 {
+      font-weight: $regular;
+    }
+  }
+
+  .chart {
+    background-color: $very-pale-orange;
+    border-radius: 15px;
+    padding: 2.5em 3.5em;
+
+    h1,
+    h2 {
+      color: $dark-brown;
+    }
+
+    h4 {
+      color: $medium-brown;
+      font-weight: $regular;
+    }
+
+    canvas {
+      margin: 4em 0 2em 0;
+    }
+
+    .total-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 2px solid lighten($medium-brown, 40);
+      padding-top: 2em;
+
+      .last-month {
+        text-align: end;
+        width: 40%;
+      }
+
+      .last-month h4:first-of-type {
+        color: $dark-brown;
+        font-weight: $bold;
+      }
+    }
+  }
+}
+
+//tooltip thingies
+.th-style {
+  border-width: 0;
+  font-family: inherit;
+  font-size: 1.5rem;
+  font-weight: $regular;
+}
+
+.tooltip-style {
+  background: hsl(25, 47%, 15%);
+  border-radius: 6px;
+  color: $very-pale-orange;
+  opacity: 1;
+  pointer-events: none;
+  position: absolute;
+  transform: translate(-50%, -125%);
+  transition: all 0.1s ease;
+}
